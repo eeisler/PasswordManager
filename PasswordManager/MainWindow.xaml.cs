@@ -25,14 +25,16 @@ namespace PasswordManager
             InitializeComponent();
         }
 
+        private void AddPass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void DelPass_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void AddPass_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

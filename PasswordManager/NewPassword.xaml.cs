@@ -23,5 +23,37 @@ namespace PasswordManager
         {
             InitializeComponent();
         }
+
+
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Generate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DigitCB(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpperCB(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LowerCB(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SpecialCB(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
