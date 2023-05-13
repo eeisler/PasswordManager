@@ -15,9 +15,21 @@ using System.Windows.Shapes;
 
 namespace PasswordManager
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /*
+     * добавление уже существующего пароля
+     * редактирование пароля
+     * отображение всего списка паролей в алфавитном порядке(в данном режиме отображаься только ресурсы, где используется пароль)
+     * генерация нового пароля
+     * 
+     * сущность пароля хранит сведения о:
+     *  -ресурсе, для которого используется пароль (эл почта, веб страница и т.д.)
+     *  -сам пароль в виде строки
+     *  -дате добавления / обновления записи
+     * 
+     * реализовать хранение паролей в виде массива структур
+     * 
+     * дополнительно реализовать хранение массива структур в json или xml файл с помощью сериализации
+    */
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,7 +39,8 @@ namespace PasswordManager
 
         private void AddPass_Click(object sender, RoutedEventArgs e)
         {
-
+            NewPassword newPassword = new NewPassword();
+            newPassword.Show();
         }
 
         private void DelPass_Click(object sender, RoutedEventArgs e)
