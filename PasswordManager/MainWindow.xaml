@@ -7,46 +7,46 @@
         mc:Ignorable="d"
         Title="Password Manager" Height="500" Width="800" ResizeMode="CanResize">
     <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="0.2*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <Image Source="/pics/lock.png" HorizontalAlignment="Left" Grid.Row="0"
-                   Grid.ColumnSpan="2" Height="60" Width="60" VerticalAlignment="Top"/>
+        <Image Source="/pics/lock.png" HorizontalAlignment="Left" Grid.Row="0"
+                Grid.ColumnSpan="2" Height="60" Width="60" VerticalAlignment="Top"/>
 
-            <TextBlock Text="Password Manager" Padding="12" Grid.ColumnSpan="2"
-                       Foreground="#363636" FontFamily="Arial Black" FontSize="32" HorizontalAlignment="Left" 
-                       Margin="60, 0, 0, 0" Width="360" TextAlignment="Center" Grid.Row="0"/>
+        <TextBlock Text="Password Manager" Padding="12" Grid.ColumnSpan="2"
+                    Foreground="#363636" FontFamily="Noto Sans" FontSize="40" HorizontalAlignment="Left" 
+                    Margin="60, 0, 0, 0" Width="380" TextAlignment="Center" Grid.Row="0" FontWeight="Bold"/>
 
-            <ListBox x:Name="List" BorderThickness="0.03" 
-                    Foreground="#363636" FontFamily="Arial Black"
-                    Grid.Row="1" Padding="5" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="List" BorderThickness="0.03" 
+                Foreground="#363636" FontFamily="Arial Black"
+                Grid.Row="1" Padding="5" Grid.ColumnSpan="2"/>
 
-            <Button Grid.Row="2" Grid.Column="0" x:Name="AddPass" Content="Add Password" Margin="150, 0, 20, 0"
-                Padding="5" Width="180" Height="50" BorderThickness="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
-                Background="#363636" Foreground="White" FontFamily="Arial Black" FontSize="16" Click="AddPass_Click">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-
-            <Button Grid.Row="2" Grid.Column="1" x:Name="DelPass" Content="Delete Password" 
+        <Button Grid.Row="2" Grid.Column="0" x:Name="AddPass" Content="Add Password" Margin="150, 0, 20, 0"
             Padding="5" Width="180" Height="50" BorderThickness="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
-            Background="#363636" Foreground="White" FontFamily="Arial Black" Margin="20, 0, 150, 0"
-            FontSize="16" Click="DelPass_Click">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+            Background="#363636" Foreground="White" FontFamily="Noto Sans" FontSize="18" Click="AddPass_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Grid.Row="2" Grid.Column="1" x:Name="DelPass" Content="Delete Password" 
+        Padding="5" Width="180" Height="50" BorderThickness="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"
+        Background="#363636" Foreground="White" FontFamily="Noto Sans" Margin="20, 0, 150, 0"
+        FontSize="18" Click="DelPass_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
