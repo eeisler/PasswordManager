@@ -19,6 +19,7 @@ namespace PasswordManager
     {
         public delegate void PassInterception(Passwords pass);
         public event PassInterception AddPassAction;
+        PasswdGenerator passgen = new PasswdGenerator();
 
         public NewPassword()
         {
@@ -30,7 +31,7 @@ namespace PasswordManager
             try
             {
                 Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text);
-                AddPassAction.Invoke(pas);
+                AddPassAction?.Invoke(pas);
             }
             catch (Exception ex)
             {
@@ -47,28 +48,28 @@ namespace PasswordManager
         }
 
         private void Generate_Click(object sender, RoutedEventArgs e)
-        {
-
+        {            
+            PasswordTB.Text = passgen.Generate();
         }
 
         private void DigitCB(object sender, RoutedEventArgs e)
         {
-
+            passgen.digits = !passgen.digits;
         }
 
         private void UpperCB(object sender, RoutedEventArgs e)
         {
-
+            passgen.upper = !passgen.upper;
         }
 
         private void LowerCB(object sender, RoutedEventArgs e)
         {
-
+            passgen.lower = !passgen.lower;
         }
 
         private void SpecialCB(object sender, RoutedEventArgs e)
         {
-
+            passgen.special = !passgen.special;
         }
     }
 }

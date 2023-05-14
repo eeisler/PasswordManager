@@ -28,7 +28,8 @@
                 Foreground="#363636" FontFamily="Noto Sans" FontSize="16"
                 Grid.Row="1" Padding="5" Grid.ColumnSpan="2"
                 KeyDown="list_KeyDown" MouseDoubleClick="list_DoubleClick"
-                VerticalContentAlignment="Stretch"/>
+                VerticalContentAlignment="Stretch">            
+        </ListBox>
 
         <Button Grid.Row="2" Grid.Column="0" x:Name="AddPass" Content="Add Password" Click="AddPass_Click" Margin="150, 0, 20, 0"
             Padding="5" Width="180" Height="50" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
