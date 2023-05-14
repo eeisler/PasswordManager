@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PasswordManager
 {
-    /// <summary>
-    /// Логика взаимодействия для NewPassword.xaml
-    /// </summary>
     public partial class NewPassword : Window
     {
         public delegate void PassInterception(Passwords pass);
@@ -42,10 +39,10 @@ namespace PasswordManager
             Close();
         }
 
-        public new void Show(int index)
+        public new void Show(Passwords index)
         {
-            PlatforTB.Text = index.ToString();
-            PasswordTB.Text = index.ToString();
+            PlatforTB.Text = index.platform.ToString();
+            PasswordTB.Text = index.password.ToString();
             base.Show();
         }
 

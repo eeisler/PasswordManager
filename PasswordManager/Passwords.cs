@@ -9,19 +9,18 @@ namespace PasswordManager
 {
     public struct Passwords
     {
-        private string _platform;
-        private string _password;
+        public string platform;
+        public string password;
 
-        public Passwords(string platform, string password)
+        public Passwords(string plfm, string pass)
         {
-            _platform = platform;
-            _password = password;
+            platform = plfm;
+            password = pass;
         }
 
         public override string ToString()
         {
-            return new string($"Platform: {_platform}");
+            return new string($"{platform}");
         }
-
     }
 }
