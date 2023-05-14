@@ -45,7 +45,7 @@ namespace PasswordManager
             passwords = deserializeFromJson.Deserialize();
             List.ItemsSource = passwords;
             List.Items.SortDescriptions.Clear();
-            List.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("platform", System.ComponentModel.ListSortDirection.Ascending));
+            List.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Content", System.ComponentModel.ListSortDirection.Ascending));
         }
 
         private void AddPass_Click(object sender, RoutedEventArgs e)
