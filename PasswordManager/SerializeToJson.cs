@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace PasswordManager;
@@ -21,6 +22,7 @@ public class SerializeToJson
 
     public void Serialize()
     {
+        passwords = new ObservableCollection<Passwords>(passwords.OrderBy(p => p.platform).ToList());
         string json = JsonSerializer.Serialize(this.passwords, this.options); 
         
         File.WriteAllText(this.PathToJson, json);
