@@ -44,8 +44,6 @@ namespace PasswordManager
             DeserializeFromJson deserializeFromJson = new DeserializeFromJson("../../../passwd.json");
             passwords = deserializeFromJson.Deserialize();
             List.ItemsSource = passwords;
-            List.Items.SortDescriptions.Clear();
-            List.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Content", System.ComponentModel.ListSortDirection.Ascending));
         }
 
         private void AddPass_Click(object sender, RoutedEventArgs e)
@@ -57,6 +55,8 @@ namespace PasswordManager
             {
                 passwords.Add(pass);
             };
+            List.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
+            List.Items.Refresh();
         }
 
         private void DelPass_Click(object sender, RoutedEventArgs e)
@@ -70,7 +70,6 @@ namespace PasswordManager
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void list_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -92,18 +91,17 @@ namespace PasswordManager
             {
                 NewPassword newpass = new NewPassword();
                 newpass.Show(passwords[List.SelectedIndex]);
-                
-                newpass.ChangePassAction += ((password) =>
+
+                newpass.ChangePassAction += (password) =>
                 {
-                    password[List.SelectedIndex] = password;
-                })
+                    passwords[List.SelectedIndex] = password;
+                };
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             SerializeToJson serializeToJson = new SerializeToJson(passwords, "../../../passwd.json");

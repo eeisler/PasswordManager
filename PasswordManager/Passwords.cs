@@ -17,7 +17,7 @@ namespace PasswordManager
         {
             platform = plfm;
             password = pass;
-            dateTimeString = DateTime.Now.ToString("dd.mm.yyyy hh:mm");
+            dateTimeString = DateTime.Now.ToString("dd.Mm.yyyy HH:mm");
         }
 
         public Passwords(string plfm, string pass, string datetime)

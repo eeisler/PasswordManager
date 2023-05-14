@@ -18,13 +18,9 @@ namespace PasswordManager
     public partial class NewPassword : Window
     {
         public delegate void PassInterception(Passwords pass);
-        public event PassInterception AddPassAction;
-        
+        public event PassInterception AddPassAction;        
         public event PassInterception ChangePassAction;
-
-        public int legth;
-
-        PasswdGenerator passgen = new PasswdGenerator();
+        PasswdGenerator passgen;
 
         public NewPassword()
         {
@@ -35,7 +31,7 @@ namespace PasswordManager
         {
             try
             {
-                Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text, DateTime.Now.ToString("dd.mm.yyyy hh:mm"));
+                Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text, DateTime.Now.ToString("dd.MM.yyyy HH:mm"));
                 ChangePassAction?.Invoke(pas);
                 AddPassAction?.Invoke(pas);
             }
@@ -54,7 +50,16 @@ namespace PasswordManager
         }
 
         private void Generate_Click(object sender, RoutedEventArgs e)
-        {            
+        {
+            if(LengthTB.Text == "")
+            {
+                passgen = new PasswdGenerator();
+            }
+            else
+            {
+                int length = Convert.ToInt32(LengthTB.Text);
+                passgen = new PasswdGenerator(length);
+            }
             PasswordTB.Text = passgen.Generate();
         }
 
@@ -76,11 +81,6 @@ namespace PasswordManager
         private void SpecialCB(object sender, RoutedEventArgs e)
         {
             passgen.special = !passgen.special;
-        }
-
-        private void GetLegth(object sender, TextChangedEventArgs e)
-        {
-            legth = Convert.ToInt32(LengthTB.Text);
         }
     }
 }
