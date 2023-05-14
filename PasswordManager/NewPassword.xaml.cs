@@ -19,6 +19,7 @@ namespace PasswordManager
     {
         public delegate void PassInterception(Passwords pass);
         public event PassInterception AddPassAction;
+
         PasswdGenerator passgen = new PasswdGenerator();
 
         public NewPassword()

@@ -31,16 +31,18 @@ namespace PasswordManager
      * 
      * реализовать хранение паролей в виде массива структур - done
      * 
-     * дополнительно реализовать хранение массива структур в json файл с помощью сериализации 
+     * дополнительно реализовать хранение массива структур в json файл с помощью сериализации - done
     */
 
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Passwords> passwords = new ObservableCollection<Passwords>();
-
+        public ObservableCollection<Passwords> passwords = new ObservableCollection<Passwords>();      
+                
         public MainWindow()
         {
             InitializeComponent();
+            DeserializeFromJson deserializeFromJson = new DeserializeFromJson("../../../passwd.json");
+            passwords = deserializeFromJson.Deserialize();
             List.ItemsSource = passwords;
             List.Items.SortDescriptions.Clear();
             List.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("platform", System.ComponentModel.ListSortDirection.Ascending));
@@ -95,6 +97,12 @@ namespace PasswordManager
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SerializeToJson serializeToJson = new SerializeToJson(passwords, "../../../passwd.json");
+            serializeToJson.Serialize();
         }
     }
 }

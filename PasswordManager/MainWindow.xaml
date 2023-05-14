@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManager"
-        mc:Ignorable="d" Icon="/pics/wlock.png"
+        mc:Ignorable="d" Icon="/pics/wlock.png" Closing="Window_Closing"
         Title="Password Manager" Height="550" Width="800" ResizeMode="CanResize">
     <Grid Margin="25">
         <Grid.RowDefinitions>
