@@ -31,7 +31,7 @@ namespace PasswordManager
         {
             try
             {
-                Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text);
+                Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text, DateTime.Now.ToString("dd.mm.yyyy hh:mm"));
                 AddPassAction?.Invoke(pas);
             }
             catch (Exception ex)

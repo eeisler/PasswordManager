@@ -20,6 +20,13 @@ namespace PasswordManager
             dateTimeString = DateTime.Now.ToString("dd.mm.yyyy hh:mm");
         }
 
+        public Passwords(string plfm, string pass, string datetime)
+        {
+            platform = plfm;
+            password = pass;
+            dateTimeString = datetime;
+        }
+        
         public override string ToString()
         {
             return new string($"{dateTimeString}\t{platform}");
