@@ -19,6 +19,9 @@ namespace PasswordManager
     {
         public delegate void PassInterception(Passwords pass);
         public event PassInterception AddPassAction;
+        
+        public event PassInterception ChangePassAction;
+
         public int legth;
 
         PasswdGenerator passgen = new PasswdGenerator();
@@ -33,6 +36,7 @@ namespace PasswordManager
             try
             {
                 Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text, DateTime.Now.ToString("dd.mm.yyyy hh:mm"));
+                ChangePassAction?.Invoke(pas);
                 AddPassAction?.Invoke(pas);
             }
             catch (Exception ex)

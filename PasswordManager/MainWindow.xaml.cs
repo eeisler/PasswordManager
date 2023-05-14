@@ -92,6 +92,11 @@ namespace PasswordManager
             {
                 NewPassword newpass = new NewPassword();
                 newpass.Show(passwords[List.SelectedIndex]);
+                
+                newpass.ChangePassAction += ((password) =>
+                {
+                    password[List.SelectedIndex] = password;
+                })
             }
             catch (Exception ex)
             {
