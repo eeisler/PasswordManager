@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,16 +20,33 @@ namespace PasswordManager
     /// </summary>
     public partial class NewPassword : Window
     {
+        public delegate void PassInterception(Passwords pass);
+        public event PassInterception AddPassAction;
+
         public NewPassword()
         {
             InitializeComponent();
         }
 
-
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Passwords pas = new Passwords(PlatforTB.Text, PasswordTB.Text);
+                AddPassAction.Invoke(pas);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Close();
+        }
 
+        public new void Show(int index)
+        {
+            PlatforTB.Text = index.ToString();
+            PasswordTB.Text = index.ToString();
+            base.Show();
         }
 
         private void Generate_Click(object sender, RoutedEventArgs e)

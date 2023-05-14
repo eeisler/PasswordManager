@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManager"
         mc:Ignorable="d" Icon="/pics/wlock.png"
-        Title="Password Manager" Height="500" Width="800" ResizeMode="CanResize">
+        Title="Password Manager" Height="550" Width="800" ResizeMode="CanResize">
     <Grid Margin="25">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -24,9 +24,11 @@
                    Foreground="#363636" FontFamily="Noto Sans" FontSize="40" HorizontalAlignment="Left" 
                    Margin="60, 0, 0, 0" Width="380" TextAlignment="Center" Grid.Row="0" FontWeight="Bold"/>
 
-        <ListBox x:Name="List" BorderThickness="0.03" 
-                Foreground="#363636" FontFamily="Arial Black"
-                Grid.Row="1" Padding="5" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="List" BorderThickness="0.03" MinHeight="20"
+                Foreground="#363636" FontFamily="Noto Sans" FontSize="16"
+                Grid.Row="1" Padding="5" Grid.ColumnSpan="2"
+                KeyDown="list_KeyDown" MouseDoubleClick="list_DoubleClick"
+                VerticalContentAlignment="Stretch"/>
 
         <Button Grid.Row="2" Grid.Column="0" x:Name="AddPass" Content="Add Password" Click="AddPass_Click" Margin="150, 0, 20, 0"
             Padding="5" Width="180" Height="50" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
