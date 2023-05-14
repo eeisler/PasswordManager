@@ -1,27 +1,7 @@
 [
   {
-    "platform": "1",
-    "password": "rbomalogon",
-    "dateTimeString": "14.21.2023 08:21"
-  },
-  {
-    "platform": "2",
-    "password": "pvedskijve",
-    "dateTimeString": "14.21.2023 08:21"
-  },
-  {
-    "platform": "a",
-    "password": "tivyehnutu",
-    "dateTimeString": "14.21.2023 08:21"
-  },
-  {
-    "platform": "d",
-    "password": "mchtinosos",
-    "dateTimeString": "14.22.2023 08:22"
-  },
-  {
-    "platform": "b",
-    "password": "nnajasonsm",
-    "dateTimeString": "14.22.2023 08:22"
+    "platform": "platform",
+    "password": "password",
+    "dateTimeString": "01.01.2023 00:00"
   }
 ]

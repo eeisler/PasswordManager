@@ -10,7 +10,7 @@ class PasswdGenerator
     private readonly Random _random = new();
     private const string PathToChains = "../../../chains.json";
 
-    public int len = 12;
+    public int len = LegthTB.GetLegth();
     public bool digits = false;
     public bool upper = false;
     public bool lower = false;

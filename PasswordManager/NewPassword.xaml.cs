@@ -19,6 +19,7 @@ namespace PasswordManager
     {
         public delegate void PassInterception(Passwords pass);
         public event PassInterception AddPassAction;
+        public int legth;
 
         PasswdGenerator passgen = new PasswdGenerator();
 
@@ -71,6 +72,11 @@ namespace PasswordManager
         private void SpecialCB(object sender, RoutedEventArgs e)
         {
             passgen.special = !passgen.special;
+        }
+
+        private void GetLegth(object sender, TextChangedEventArgs e)
+        {
+            legth = Convert.ToInt32(LengthTB.Text);
         }
     }
 }
