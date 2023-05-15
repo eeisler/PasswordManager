@@ -58,29 +58,35 @@ namespace PasswordManager
             else
             {
                 int length = Convert.ToInt32(LengthTB.Text);
-                passgen = new PasswdGenerator(length);
+                passgen = new PasswdGenerator(length, digflag, uppflag, lowflag, specflag);
             }
             PasswordTB.Text = passgen.Generate();
         }
 
+
+        bool digflag = false;
+        bool uppflag = false;
+        bool lowflag = false;
+        bool specflag = false;
+
         private void DigitCB(object sender, RoutedEventArgs e)
         {
-            passgen.digits = !passgen.digits;
+            digflag = true;
         }
 
         private void UpperCB(object sender, RoutedEventArgs e)
         {
-            passgen.upper = !passgen.upper;
+            uppflag = true;
         }
 
         private void LowerCB(object sender, RoutedEventArgs e)
         {
-            passgen.lower = !passgen.lower;
+            lowflag = true;
         }
 
         private void SpecialCB(object sender, RoutedEventArgs e)
         {
-            passgen.special = !passgen.special;
+            specflag = true;
         }
     }
 }

@@ -18,10 +18,6 @@ class PasswdGenerator
 
     public PasswdGenerator() {}
 
-    public PasswdGenerator(int len)
-    {
-        this.len = len;
-    }
     public PasswdGenerator(int len, bool digits, bool upper, bool lower, bool special)
     {
         this.len = len;
