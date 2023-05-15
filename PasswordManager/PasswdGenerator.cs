@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Windows;
 
 class PasswdGenerator
 {
@@ -17,7 +18,6 @@ class PasswdGenerator
     public bool special = false;
 
     public PasswdGenerator() {}
-
     public PasswdGenerator(int len, bool digits, bool upper, bool lower, bool special)
     {
         this.len = len;
@@ -26,6 +26,13 @@ class PasswdGenerator
         this.lower = lower;
         this.special = special;
     }
+
+    public PasswdGenerator(int len)
+    {
+        this.len = len;
+    }
+
+    
 
     private Dictionary<string, List<string>>? GetChains(string path)
     {

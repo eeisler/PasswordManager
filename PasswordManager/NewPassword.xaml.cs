@@ -51,13 +51,14 @@ namespace PasswordManager
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
-            if(LengthTB.Text == "")
+            if (LengthTB.Text == "")
             {
-                passgen = new PasswdGenerator();
+                passgen = new PasswdGenerator(length, digflag, uppflag, lowflag, specflag);
             }
-            else
+
+            else if(LengthTB.Text != "")
             {
-                int length = Convert.ToInt32(LengthTB.Text);
+                length = Convert.ToInt32(LengthTB.Text);
                 passgen = new PasswdGenerator(length, digflag, uppflag, lowflag, specflag);
             }
             PasswordTB.Text = passgen.Generate();
@@ -67,6 +68,7 @@ namespace PasswordManager
         bool uppflag = false;
         bool lowflag = false;
         bool specflag = false;
+        int length = 12;
 
         private void DigitCB(object sender, RoutedEventArgs e)
         {
