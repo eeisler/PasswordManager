@@ -63,7 +63,6 @@ namespace PasswordManager
             PasswordTB.Text = passgen.Generate();
         }
 
-
         bool digflag = false;
         bool uppflag = false;
         bool lowflag = false;
