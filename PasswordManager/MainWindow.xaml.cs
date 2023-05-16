@@ -18,22 +18,6 @@ using System.Windows.Shapes;
 
 namespace PasswordManager
 {
-    /*
-     * добавление уже существующего пароля - done
-     * редактирование пароля - done
-     * отображение всего списка паролей в алфавитном порядке - done
-     * генерация нового пароля - done
-     * 
-     * сущность пароля хранит сведения о:
-     *  -ресурсе, для которого используется пароль (эл почта, веб страница и т.д.) - done
-     *  -сам пароль в виде строки - done
-     *  -дате добавления / обновления записи - 
-     * 
-     * реализовать хранение паролей в виде массива структур - done
-     * 
-     * дополнительно реализовать хранение массива структур в json файл с помощью сериализации - done
-    */
-
     public partial class MainWindow : Window
     {
         public ObservableCollection<Passwords> passwords = new ObservableCollection<Passwords>();      
@@ -55,6 +39,8 @@ namespace PasswordManager
             {
                 passwords.Add(pass);
             };
+            SerializeToJson serializeToJson = new SerializeToJson(passwords, "../../../passwd.json");
+            serializeToJson.Serialize();
             List.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
             List.Items.Refresh();
         }
